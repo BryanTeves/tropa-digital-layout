@@ -1,0 +1,40 @@
+// Aqui são classes de utilidades. Usadas para adicionar algo específico a determinado elemento, por isso o !important.
+
+.orange {
+  color: var(--color-orange) !important;
+}
+
+.gray {
+  color: var(--color-gray) !important;
+}
+
+.gray-light {
+  color: var(--color-gray-light) !important;
+}
+
+.tiny {
+  height: 1.5rem !important;
+  width: 1.5rem !important;
+}
+
+@mixin btn {
+  padding: 1.4rem;
+  background-color: var(--color-btn);
+  color: var(--color-white);
+  border: none;
+  border-radius: 0.8rem;
+}
+
+$largest-size: 112.5em; // 1800px
+$large-size: 100em; // 1600px
+$biggest-size: 81.25em; // 1300px
+$big-size: 75em; // 1200px
+$medium-size: 68.75em; // 1100px
+$normal-size: 62.5em; // 1000px
+$small-size: 25em; // 400px
+
+@mixin media($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}

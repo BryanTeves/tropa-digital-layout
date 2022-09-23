@@ -1,0 +1,129 @@
+.main-background {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--color-orange);
+}
+
+.login {
+  &_main {
+    margin: 18rem auto;
+    background-color: var(--color-white);
+    width: 50vw;
+    height: 53vh;
+    border-radius: var(--border-normalize);
+    font-size: 1.2rem;
+    box-shadow: 1px 1px 2rem var(--color-shadow);
+
+    color: var(--color-gray);
+
+    display: grid;
+    grid-template-columns: 55% 45%;
+    grid-template-rows: repeat(2, 1fr);
+
+    @include media($large-size) {
+      width: 80vw;
+      height: 55vh;
+    }
+
+    @include media($normal-size) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      justify-items: center;
+    }
+  }
+
+  &_div-form {
+    padding: 8rem;
+    display: grid;
+    grid-gap: 2rem;
+    grid-row: 1 / -1;
+    position: relative;
+
+    &--image {
+      margin-left: 2rem;
+    }
+  }
+
+  &_form {
+    display: grid;
+    grid-gap: 2rem;
+    align-self: start;
+    justify-self: left;
+
+    &-input {
+      padding: 1rem;
+      width: 30rem;
+      border: 1px solid var(--color-gray-rgba);
+      border-radius: 0.5rem;
+      position: relative;
+
+      &::placeholder {
+        color: var(--color-gray-rgba);
+      }
+
+      &--password {
+        position: relative;
+      }
+    }
+  }
+
+  &_div-images {
+    background-image: url("../../assets/images/mini-background.png");
+    background-size: cover;
+    position: relative;
+    grid-row: 1 / -1;
+    border-radius: 0 0.8rem 0.8rem 0;
+
+    @include media($normal-size) {
+      display: none;
+    }
+  }
+
+  &-icon {
+    position: absolute;
+    right: 5%;
+    top: 20%;
+
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+.tropa-image {
+  width: 70%;
+}
+
+.notebook-image {
+  height: 42rem;
+  position: absolute;
+  bottom: 0;
+  right: 30%;
+
+  @include media($largest-size) {
+    right: 15%;
+    height: 38rem;
+  }
+
+  @include media($large-size) {
+    right: 44%;
+    height: 40rem;
+  }
+
+  @include media($big-size) {
+    right: 22%;
+    height: 35rem;
+  }
+}
+
+.btn {
+  @include btn;
+
+  width: 16rem;
+  transition: all 2s;
+
+  cursor: pointer;
+}

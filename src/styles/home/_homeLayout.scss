@@ -1,0 +1,120 @@
+.home-background {
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+
+  grid-template-columns: 13.5% 1fr;
+
+  @include media($medium-size) {
+    grid-template-rows: 18rem 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+
+.home_header {
+  background-color: white;
+  padding: 2rem;
+
+  font-size: 1.4rem;
+
+  display: grid;
+  grid-template-rows: 15% 1fr;
+
+  @include media($medium-size) {
+    grid-template-rows: 1fr;
+    grid-template-columns: 20rem 1fr;
+  }
+
+  &-img {
+    margin: 2.5rem 0;
+
+    &--tropa {
+      width: 100%;
+
+      @include media($biggest-size) {
+        width: 80%;
+      }
+    }
+  }
+
+  &-ul {
+    display: grid;
+    grid-gap: 1rem;
+
+    @include media($medium-size) {
+      grid-template-columns: repeat(auto-fit, minmax(10rem, max-content));
+    }
+
+    & li {
+      @include btn;
+
+      margin-left: 1rem;
+      align-items: center;
+      display: flex;
+
+      @include media($biggest-size) {
+        margin: 0;
+        height: 6rem;
+        display: grid;
+      }
+
+      &:first-child {
+        background-color: var(--color-gray-light);
+        color: var(--color-black);
+        width: 110%;
+
+        @include media($medium-size) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.home-icon {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 1rem;
+}
+
+.home_main {
+  font-weight: 300;
+  padding: 4.5rem;
+  display: grid;
+  grid-template-rows: 10% 1fr;
+
+  background-color: var(--color-gray-light);
+
+  @include media($medium-size) {
+    grid-template-rows: 5% 1fr;
+  }
+
+  &-title {
+    color: var(--color-gray-rgba);
+    &::after {
+      content: "";
+      border-bottom: 1px solid var(--color-gray-rgba);
+      display: block;
+      height: 4rem;
+      width: 100%;
+    }
+  }
+
+  &-card {
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(10rem, 1fr));
+
+    @include media($biggest-size) {
+      grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    }
+
+    @include media($medium-size) {
+      grid-template-columns: repeat(auto-fit, minmax(60rem, 1fr));
+
+      justify-items: center;
+    }
+  }
+}
